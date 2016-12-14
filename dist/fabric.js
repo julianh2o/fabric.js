@@ -10177,6 +10177,7 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
      * @param {Event} e Event object fired on mousedown
      */
     _onMouseDown: function (e) {
+      this.fire('mouse:beforedrag',e);
       this.__onMouseDown(e);
 
       addListener(fabric.document, 'touchend', this._onMouseUp);
